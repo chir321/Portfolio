@@ -106,7 +106,9 @@ const AboutMe = () => {
           </motion.p>
           <div className="flex justify-center gap-4 pt-4">
             <a 
-              href="mailto:chiragdasuni2021@gmail.com"
+              href="https://drive.google.com/file/d/1x5XPpJclLLGwNyiUTgJcGUyFygS_4gNw/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="gold-button flex items-center gap-2"
             >
               <Download size={18} /> Download CV
