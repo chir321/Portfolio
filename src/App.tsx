@@ -143,7 +143,10 @@ const AboutMe = () => {
             My career aspirations lie at the intersection of engineering and finance. 
             I aim to apply structured engineering methodologies to strategic financial decisions, 
             leveraging my experience in commodity trading and technical analysis to solve 
-            complex global challenges in energy and infrastructure.
+            complex global challenges in energy and infrastructure. I am passionate about 
+            using my financial acumen to ensure that engineering projects are not just 
+            technically sound, but also commercially feasible and sustainable, bringing 
+            innovative ideas to life through rigorous business modeling and technical excellence.
           </p>
         </div>
       </div>
@@ -154,14 +157,24 @@ const AboutMe = () => {
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <GraduationCap className="text-gold-500" /> Education
           </h3>
-          <div className="glass p-6 rounded-2xl border-l-4 border-l-gold-500">
-            <p className="font-bold text-lg">Bachelor of Applied Science</p>
-            <p className="text-gold-400">Electrical Engineering</p>
-            <p className="text-sm text-slate-400 mt-2">University of British Columbia | Class of 2026</p>
-            <p className="text-xs text-slate-500 mt-4 leading-relaxed">
-              Focusing on power systems, renewable energy integration, and control theory. 
-              Active member of the engineering community and student leadership.
-            </p>
+          <div className="space-y-6">
+            <div className="glass p-6 rounded-2xl border-l-4 border-l-gold-500">
+              <p className="font-bold text-lg">Bachelor of Applied Science</p>
+              <p className="text-gold-400">Electrical Engineering</p>
+              <p className="text-sm text-slate-400 mt-2">University of British Columbia | Class of 2026</p>
+              <p className="text-xs text-slate-500 mt-4 leading-relaxed">
+                Focusing on power systems, renewable energy integration, and control theory. 
+                Active member of the engineering community and student leadership.
+              </p>
+            </div>
+            <div className="glass p-6 rounded-2xl border-l-4 border-l-gold-500">
+              <p className="font-bold text-lg">High School Diploma</p>
+              <p className="text-gold-400">Science Stream</p>
+              <p className="text-sm text-slate-400 mt-2">Delhi Private School, Sharjah | Graduated 2021</p>
+              <p className="text-xs text-slate-500 mt-4 leading-relaxed">
+                Focused on Physics, Chemistry, and Mathematics. Academic Excellence award recipient.
+              </p>
+            </div>
           </div>
         </div>
         <div>
@@ -465,6 +478,36 @@ const ProjectEntry = () => {
         </div>
       </div>
 
+      {/* Project Genesis: Our Story */}
+      <div className="mb-32">
+        <h3 className="text-3xl font-bold mb-12 flex items-center gap-4">
+          <MessageSquare className="text-gold-500" /> The Project <span className="gold-gradient">Genesis</span>
+        </h3>
+        <div className="glass p-10 rounded-[3rem] border-gold-500/10 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gold-500/5 blur-[80px] -z-10" />
+          <div className="space-y-6 text-slate-300 leading-relaxed">
+            <p>
+              The story of this project began with a fundamental question: How can engineering serve those whom the global grid has left behind? 
+              Our journey to rural Cienfuegos, Cuba, was not just about technical data, but about understanding the human cost of energy poverty. 
+              Initial site visits and extensive surveys revealed a stark reality—daily outages lasting between <strong>18 to 24 hours</strong> were the norm, 
+              not the exception. We met families whose lives were dictated by the sun, unable to store medicine or study after dark.
+            </p>
+            <p>
+              The engineering challenge was clear: design a resilient microgrid. However, we quickly realized that the <strong>non-engineering challenges</strong> 
+              were equally formidable. We had to navigate complex ethical considerations—how do we prioritize limited power between medical refrigeration 
+              and basic lighting? We also faced severe physical constraints; many dwellings had <strong>poor structural integrity</strong>, with roofs 
+              unable to support even lightweight solar panels, forcing us to rethink our entire mounting strategy.
+            </p>
+            <p>
+              This project was a lesson in empathy as much as it was in electrical architecture. We weren't just building a power system; 
+              we were responding to an ever-growing need for dignity and safety in a community facing extreme infrastructure decay. 
+              Every survey response and site measurement reinforced that our design had to be more than functional—it had to be 
+              survivable, affordable, and ethically sound.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Methodology Section */}
       <div className="mb-32">
         <h3 className="text-3xl font-bold mb-12 flex items-center gap-4">
@@ -512,7 +555,7 @@ const ProjectEntry = () => {
             <div className="glass p-6 rounded-[3rem] border-gold-500/10 group">
               <div className="aspect-video bg-slate-900 rounded-[2rem] overflow-hidden relative">
                 <img 
-                  src="moutning system.jpeg" 
+                  src="https://drive.google.com/thumbnail?id=1em3JZj-aDAG2SDyYrwYdwNlQ1_AMfAO_" 
                   alt="Ground Mount Iteration" 
                   className="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-105"
                   referrerPolicy="no-referrer"
@@ -554,7 +597,7 @@ const ProjectEntry = () => {
             <div className="glass p-6 rounded-[3rem] border-gold-500/10 group">
               <div className="aspect-video bg-slate-900 rounded-[2rem] overflow-hidden relative">
                 <img 
-                  src="bom.jpeg" 
+                  src="https://i.pinimg.com/736x/50/7f/34/507f3465683ddab4aaf6f9157ad5ef18.jpg" 
                   alt="Electrical Architecture" 
                   className="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-105"
                   referrerPolicy="no-referrer"
@@ -690,32 +733,48 @@ const Reflection = () => {
       
       <div className="glass p-10 rounded-3xl space-y-8 leading-relaxed text-slate-300 border-gold-500/10">
         <p>
-          Reflecting on my journey through the UBC School of Engineering, specifically my work on the Smart Grid Monitoring project, 
+          Reflecting on my journey through the UBC School of Engineering, specifically my work on the <strong>Solar Microgrid for rural households in Cuba</strong>, 
           I have gained a profound understanding of the iterative nature of the design process. I learned that engineering is rarely 
           a linear path from problem to solution; rather, it is a cycle of prototyping, failure, and refinement. My experience 
-          taught me that the most elegant solutions often emerge from the constraints of early failures.
+          taught me that the most elegant solutions often emerge from the constraints of early failures. In the context of the Cuba project, 
+          this meant pivoting from rooftop installations to ground-mounted systems when we discovered the structural fragility of local homes. 
+          This wasn't just a technical adjustment; it was a realization that engineering must be deeply rooted in the physical and social 
+          realities of the environment it serves.
         </p>
         
         <p>
           I believe the most important attributes of an engineer are <strong>adaptability</strong> and <strong>ethical foresight</strong>. 
           In this course, I realized that technical proficiency is only half the battle. An engineer must be able to pivot when 
-          data contradicts their assumptions and must always consider the long-term societal impact of their designs. This project 
-          contributed significantly to my understanding of the professional engineer's role in society—we are not just builders, 
-          but stewards of public safety and sustainability.
+          data contradicts their assumptions and must always consider the long-term societal impact of their designs. The ethical 
+          dilemmas we faced—such as deciding which essential loads to prioritize in a resource-constrained environment—forced me to 
+          confront the reality that engineering decisions are often moral decisions. This project contributed significantly to my 
+          understanding of the professional engineer's role in society—we are not just builders, but stewards of public safety, 
+          sustainability, and social equity. We have a responsibility to design systems that empower communities rather than just 
+          providing a temporary fix.
         </p>
         
         <p>
           My time at UBC has revealed that my greatest strength is my ability to bridge technical engineering concepts with 
           strategic analysis, a skill I've honed through both my degree and my interest in financial markets. I bring a 
-          holistic perspective to problem-solving that considers both the "how" and the "why." However, I recognize that 
-          my project management skills, particularly in large-scale collaborative environments, are an area for growth. 
-          I plan to facilitate this development by seeking leadership roles in student design teams and pursuing 
-          certifications in agile methodologies.
+          holistic perspective to problem-solving that considers both the "how" and the "why." I've learned that a project's 
+          success is measured not just by its efficiency, but by its long-term viability and the trust it builds within a community. 
+          However, I recognize that my project management skills, particularly in navigating the complex logistics of international 
+          collaborations and supply chains, are an area for growth. I plan to facilitate this development by seeking leadership 
+          roles in student design teams and pursuing certifications in agile methodologies, ensuring I can lead teams through 
+          the unpredictable challenges of global engineering projects.
+        </p>
+
+        <p>
+          Ultimately, this ePortfolio represents more than just a collection of projects; it is a testament to my growth as a 
+          professional who values technical excellence as much as human-centric design. As I move forward into my career, 
+          I am committed to applying these lessons—resilience, ethics, and strategic thinking—to solve the complex energy 
+          and infrastructure challenges of our time. I am ready to contribute to a world where engineering serves as a 
+          bridge to a more sustainable and equitable future for all.
         </p>
 
         <div className="pt-8 border-t border-white/10 flex items-center gap-4 text-slate-500 italic">
           <MessageSquare size={20} className="text-gold-500" />
-          <span>Reflective analysis of professional growth and societal impact.</span>
+          <span>Comprehensive reflective analysis of professional growth, ethical responsibility, and societal impact.</span>
         </div>
       </div>
     </motion.div>
