@@ -767,7 +767,7 @@ const Reflection = () => {
         </p>
 
         <p>
-          Ultimately, this ePortfolio represents more than just a collection of projects; it is a testament to my growth as a 
+          Ultimately, this Portfolio represents more than just a collection of projects; it is a testament to my growth as a 
           professional who values technical excellence as much as human-centric design. As I move forward into my career, 
           I am committed to applying these lessons—resilience, ethics, and strategic thinking—to solve the complex energy 
           and infrastructure challenges of our time. I am ready to contribute to a world where engineering serves as a 
@@ -776,7 +776,7 @@ const Reflection = () => {
 
         <div className="pt-8 border-t border-white/10 flex items-center gap-4 text-slate-500 italic">
           <MessageSquare size={20} className="text-gold-500" />
-          <span>Comprehensive reflective analysis of professional growth, ethical responsibility, and societal impact.</span>
+          <span>a project can only be two of the following three, cheap, good, fast.</span>
         </div>
       </div>
     </motion.div>
