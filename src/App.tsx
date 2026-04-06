@@ -19,29 +19,41 @@ import {
 } from 'lucide-react';
 
 // --- Types ---
-type Page = 'about' | 'project' | 'reflection';
+type Page = 'about' | 'experience' | 'project' | 'other-projects' | 'reflection';
 
 // --- Components ---
 
 const Navbar = ({ activePage, setActivePage }: { activePage: Page, setActivePage: (p: Page) => void }) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6">
-      <div className="glass px-6 py-3 rounded-full flex items-center gap-8">
+      <div className="glass px-4 md:px-6 py-3 rounded-full flex items-center gap-4 md:gap-8 overflow-x-auto max-w-[95vw]">
         <button 
           onClick={() => setActivePage('about')}
-          className={`text-sm font-medium transition-colors ${activePage === 'about' ? 'text-sky-400' : 'text-slate-400 hover:text-white'}`}
+          className={`text-xs md:text-sm font-medium transition-colors whitespace-nowrap ${activePage === 'about' ? 'text-sky-400' : 'text-slate-400 hover:text-white'}`}
         >
-          About me
+          About
+        </button>
+        <button 
+          onClick={() => setActivePage('experience')}
+          className={`text-xs md:text-sm font-medium transition-colors whitespace-nowrap ${activePage === 'experience' ? 'text-sky-400' : 'text-slate-400 hover:text-white'}`}
+        >
+          Experience
         </button>
         <button 
           onClick={() => setActivePage('project')}
-          className={`text-sm font-medium transition-colors ${activePage === 'project' ? 'text-sky-400' : 'text-slate-400 hover:text-white'}`}
+          className={`text-xs md:text-sm font-medium transition-colors whitespace-nowrap ${activePage === 'project' ? 'text-sky-400' : 'text-slate-400 hover:text-white'}`}
         >
-          Capstone Project
+          Capstone
+        </button>
+        <button 
+          onClick={() => setActivePage('other-projects')}
+          className={`text-xs md:text-sm font-medium transition-colors whitespace-nowrap ${activePage === 'other-projects' ? 'text-sky-400' : 'text-slate-400 hover:text-white'}`}
+        >
+          Projects
         </button>
         <button 
           onClick={() => setActivePage('reflection')}
-          className={`text-sm font-medium transition-colors ${activePage === 'reflection' ? 'text-sky-400' : 'text-slate-400 hover:text-white'}`}
+          className={`text-xs md:text-sm font-medium transition-colors whitespace-nowrap ${activePage === 'reflection' ? 'text-sky-400' : 'text-slate-400 hover:text-white'}`}
         >
           Reflection
         </button>
@@ -199,6 +211,136 @@ const AboutMe = () => {
   );
 };
 
+const Experience = () => {
+  const experiences = [
+    {
+      company: "UBC Engineering Society",
+      role: "Electrical Engineering Representative",
+      period: "Mar 2023 – Apr 2024",
+      points: [
+        "Advocated for the academic and community needs of engineering students",
+        "Facilitated communication between students, professors, and industry professionals",
+        "Managed student resources and budget allocation"
+      ]
+    },
+    {
+      company: "Century Financial",
+      role: "Summer Intern / Commodity Trader",
+      period: "Jul 2023 – Sep 2023",
+      points: [
+        "Traded gold commodities via MetaTrader 5 under expert guidance",
+        "Conducted market research and technical analysis",
+        "Developed trading strategies and gained practical insight into global financial markets"
+      ]
+    },
+    {
+      company: "Mazil Center",
+      role: "Project Intern",
+      period: "Jul 2022 – Sep 2022",
+      points: [
+        "Designed accessible educational programs using Universal Design for Learning",
+        "Produced a proof-of-concept assessment tool for children with disabilities"
+      ]
+    }
+  ];
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="max-w-4xl mx-auto pt-32 pb-20 px-6"
+    >
+      <h1 className="text-5xl font-bold mb-12">Work <span className="text-sky-400">Experience</span></h1>
+      <div className="space-y-12">
+        {experiences.map((exp, i) => (
+          <div key={i} className="relative pl-8 border-l border-white/10">
+            <div className="absolute left-[-5px] top-0 w-[9px] h-[9px] rounded-full bg-sky-400 shadow-[0_0_10px_rgba(56,189,248,0.5)]" />
+            <div className="glass p-6 rounded-2xl hover:border-sky-400/30 transition-all group">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4 gap-2">
+                <h3 className="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">{exp.role}</h3>
+                <span className="text-sky-400 font-mono text-sm">{exp.period}</span>
+              </div>
+              <p className="text-slate-300 font-medium mb-4">{exp.company}</p>
+              <ul className="space-y-2">
+                {exp.points.map((point, j) => (
+                  <li key={j} className="text-slate-400 text-sm flex items-start gap-2">
+                    <span className="text-sky-400 mt-1">▹</span> {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  );
+};
+
+const OtherProjects = () => {
+  const projects = [
+    {
+      title: "3-Input 3-Bit Full Adder",
+      period: "Sep 2024 – Dec 2024",
+      desc: "Designed a digital circuit in Cadence Virtuoso to add three 3-bit binary numbers, producing a 4-bit sum and carry-out.",
+      tech: ["Cadence Virtuoso", "Digital Logic"]
+    },
+    {
+      title: "D.C Three-Pole Motor",
+      period: "Jan 2024 – Apr 2024",
+      desc: "Built an unconventional DC motor using only scrap materials, gaining hands-on experience in electromagnetic design.",
+      tech: ["Electromagnetics", "Prototyping"]
+    },
+    {
+      title: "Self-Driving Raspberry Pi Car",
+      period: "Jan 2023 – Apr 2023",
+      desc: "Created a mini self-driving vehicle using Raspberry Pi 3 and trained machine learning models using real-world datasets.",
+      tech: ["Raspberry Pi", "Python", "Machine Learning"]
+    },
+    {
+      title: "Functional Mosin Nagant Rifle Model",
+      period: "Sep 2021 – Dec 2021",
+      desc: "Led a team that 3D-scanned and modeled a Russian Mosin Nagant rifle in SolidWorks, ranking in the top 8 of 70 project teams.",
+      tech: ["SolidWorks", "3D Scanning", "Team Lead"]
+    },
+    {
+      title: "Wildfire Suppression System",
+      period: "Sep 2021 – Dec 2021",
+      desc: "Invented and prototyped a 3D-printed suppression device for wildfires, designed to be mounted on urban lamp posts.",
+      tech: ["Prototyping", "3D Printing", "Environmental Design"]
+    }
+  ];
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="max-w-6xl mx-auto pt-32 pb-20 px-6"
+    >
+      <h1 className="text-5xl font-bold mb-12">Engineering <span className="text-sky-400">Portfolio</span></h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {projects.map((project, i) => (
+          <div key={i} className="glass p-8 rounded-3xl hover:bg-white/10 transition-all group border-white/5">
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="text-xl font-bold group-hover:text-sky-400 transition-colors">{project.title}</h3>
+              <span className="text-xs font-mono text-slate-500 whitespace-nowrap ml-4">{project.period}</span>
+            </div>
+            <p className="text-slate-400 text-sm leading-relaxed mb-6">{project.desc}</p>
+            <div className="flex flex-wrap gap-2">
+              {project.tech.map((t) => (
+                <span key={t} className="text-[10px] font-mono px-2 py-1 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  );
+};
+
 const ProjectEntry = () => {
   return (
     <motion.div 
@@ -209,84 +351,90 @@ const ProjectEntry = () => {
     >
       {/* Project Header */}
       <div className="mb-16">
-        <h1 className="text-5xl font-bold mb-4">Capstone: <span className="text-sky-400">Smart Grid Monitoring System</span></h1>
-        <p className="text-slate-400 text-xl">An IoT-enabled solution for real-time power distribution analysis and fault detection.</p>
+        <h1 className="text-5xl font-bold mb-4">Capstone: <span className="text-sky-400">Off-Grid Solar Microgrid</span></h1>
+        <p className="text-slate-400 text-xl">A resilient energy solution for rural households in Cienfuegos, Cuba (ENGR 499).</p>
       </div>
 
       {/* Narrative Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
         <div className="lg:col-span-2 space-y-8">
           <section>
-            <h3 className="text-sky-400 font-mono text-sm uppercase tracking-widest mb-4">The Narrative</h3>
+            <h3 className="text-sky-400 font-mono text-sm uppercase tracking-widest mb-4">Project Narrative</h3>
             <div className="prose prose-invert max-w-none text-slate-300 leading-relaxed">
               <p>
-                As urban energy demands skyrocket, traditional power grids struggle with efficiency and rapid fault response. 
-                My Capstone project focused on developing a <strong>Smart Grid Monitoring System</strong> that bridges the gap 
-                between legacy infrastructure and modern IoT capabilities.
+                In Cienfuegos, Cuba, families face daily blackouts lasting 18 to 21 hours. Our team, Team I27, developed a 
+                <strong> low-cost, off-grid solar microgrid</strong> to provide reliable power for essential loads like 
+                refrigeration, lighting, and medical device charging.
               </p>
               <p>
-                <strong>The Objective:</strong> To create a low-cost, scalable sensor network capable of detecting line faults 
-                within milliseconds while providing utility engineers with a granular view of power consumption patterns.
+                <strong>The Challenge:</strong> We had to design a system that could withstand tropical hurricanes and 
+                tampering while remaining affordable for residents with an average annual income of $350 USD. 
+                A critical pivot in our workflow was moving from a rooftop-mounted system to a <strong>ground-mounted timber frame</strong> 
+                after realizing the structural inability of rural Cuban rooftops to support PV loads.
               </p>
               <p>
-                <strong>The Process:</strong> The journey began with mathematical modeling of distribution losses in MATLAB. 
-                This evolved into a series of hardware iterations—from breadboard prototypes using ESP32 microcontrollers 
-                to a final custom PCB design integrated with high-precision current transformers.
+                <strong>My Contribution:</strong> I spearheaded the research and selection of critical electrical components, 
+                specifically the <strong>20kWh LiFePO4 battery energy storage system</strong> and the 5kW hybrid inverter. 
+                I managed the <strong>Bill of Materials (BOM)</strong>, ensuring we stayed within the $2500 CAD budget, 
+                and assembled the physical scale model used for proof-of-concept testing.
               </p>
             </div>
           </section>
 
           <section>
-            <h3 className="text-sky-400 font-mono text-sm uppercase tracking-widest mb-4">Engineering Perspective</h3>
+            <h3 className="text-sky-400 font-mono text-sm uppercase tracking-widest mb-4">Engineering Design</h3>
             <div className="glass p-6 rounded-xl space-y-6">
-              <div className="aspect-video bg-slate-900 rounded-lg flex items-center justify-center border border-white/5 overflow-hidden">
+              <div className="aspect-video bg-slate-900 rounded-lg flex items-center justify-center border border-white/5 overflow-hidden relative">
                 <img 
-                  src="https://picsum.photos/seed/circuit/1200/800" 
-                  alt="Circuit Diagram" 
-                  className="w-full h-full object-cover opacity-50"
+                  src="https://picsum.photos/seed/solar-design/1200/800" 
+                  alt="Electrical Schematic" 
+                  className="w-full h-full object-cover opacity-30"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="text-center">
-                    <Zap className="mx-auto mb-2 text-sky-400" size={48} />
-                    <p className="font-mono text-xs text-slate-500">SYSTEM ARCHITECTURE DIAGRAM V4.2</p>
-                   </div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-center">
+                  <div className="font-mono text-[10px] text-sky-400/70 mb-4">SYSTEM_SPEC_V4.0 // 48V_DC_ARCHITECTURE</div>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-white font-bold"><Zap size={14} className="text-sky-400" /> 10x 530W LONGi Solar Panels (5S2P)</div>
+                    <div className="flex items-center gap-2 text-white font-bold"><Cpu size={14} className="text-sky-400" /> 5kW Hybrid Inverter + MPPT</div>
+                    <div className="flex items-center gap-2 text-white font-bold"><Briefcase size={14} className="text-sky-400" /> 20kWh LiFePO4 Battery Bank</div>
+                  </div>
                 </div>
               </div>
-              <p className="text-sm text-slate-400 italic text-center">Figure 1: High-level schematic showing the integration of the sensing nodes with the central data gateway via LoRaWAN protocol.</p>
+              <p className="text-sm text-slate-400 italic text-center">Figure 1: Final electrical architecture featuring a 48V DC bus and integrated Battery Management System (BMS).</p>
             </div>
           </section>
         </div>
 
         <div className="space-y-8">
           <div className="glass p-6 rounded-xl">
-            <h4 className="font-bold mb-4 flex items-center gap-2"><Briefcase size={18} /> Project Stats</h4>
+            <h4 className="font-bold mb-4 flex items-center gap-2 text-sky-400"><Terminal size={18} /> Technical Specs</h4>
             <div className="space-y-4 text-sm">
               <div className="flex justify-between">
-                <span className="text-slate-500">Duration</span>
-                <span>8 Months</span>
+                <span className="text-slate-500">Architecture</span>
+                <span className="font-mono">48V DC</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Role</span>
-                <span>Lead Hardware Engineer</span>
+                <span className="text-slate-500">Storage</span>
+                <span className="font-mono">20kWh (LiFePO4)</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Tech Stack</span>
-                <span>C++, Python, KiCad</span>
+                <span className="text-slate-500">Inverter</span>
+                <span className="font-mono">5kW Hybrid</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Outcome</span>
-                <span>98% Fault Accuracy</span>
+                <span className="text-slate-500">Daily Yield</span>
+                <span className="font-mono">~21kWh</span>
               </div>
             </div>
           </div>
 
           <div className="glass p-6 rounded-xl">
-            <h4 className="font-bold mb-4 flex items-center gap-2"><Code size={18} /> Key Contributions</h4>
+            <h4 className="font-bold mb-4 flex items-center gap-2 text-sky-400"><Briefcase size={18} /> My Workflow</h4>
             <ul className="text-sm space-y-3 text-slate-400">
-              <li>• Designed multi-layer PCB for noise isolation</li>
-              <li>• Developed edge-computing algorithm for fault classification</li>
-              <li>• Integrated AWS IoT Core for real-time dashboarding</li>
+              <li>• Conducted regular client meetings to align on constraints</li>
+              <li>• Researched and verified efficiency of 10 AWG PV cabling</li>
+              <li>• Developed the comprehensive Bill of Materials (BOM)</li>
+              <li>• Assembled the physical scale model with Arduino monitoring</li>
             </ul>
           </div>
         </div>
@@ -294,12 +442,12 @@ const ProjectEntry = () => {
 
       {/* Iteration Gallery */}
       <div className="space-y-8 mb-20">
-        <h3 className="text-2xl font-bold">Design Evolution</h3>
+        <h3 className="text-2xl font-bold">Design Iteration</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { title: "Phase 1: Concept", img: "https://picsum.photos/seed/sketch/400/300", desc: "Initial low-fidelity sketches focusing on sensor placement." },
-            { title: "Phase 2: Prototype", img: "https://picsum.photos/seed/proto/400/300", desc: "Breadboard testing of the ESP32 and CT sensor integration." },
-            { title: "Phase 3: Final", img: "https://picsum.photos/seed/final/400/300", desc: "The final 3D-printed enclosure and custom PCB assembly." }
+            { title: "BOM & Component Selection", img: "https://picsum.photos/seed/bom/400/300", desc: "Selecting LiFePO4 modules for high thermal stability in Cuba's climate." },
+            { title: "Ground-Mount Shift", img: "https://picsum.photos/seed/mount/400/300", desc: "Transitioning to a timber-frame ground mount for structural safety." },
+            { title: "Physical Scale Model", img: "https://picsum.photos/seed/model/400/300", desc: "Assembling the proof-of-concept model with real-time sensor feedback." }
           ].map((item, i) => (
             <div key={i} className="group">
               <div className="aspect-square glass rounded-xl overflow-hidden mb-4">
@@ -315,15 +463,6 @@ const ProjectEntry = () => {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Call to Action */}
-      <div className="glass p-12 rounded-3xl text-center space-y-6">
-        <h2 className="text-3xl font-bold">Interested in the technical details?</h2>
-        <p className="text-slate-400 max-w-xl mx-auto">The full source code, schematics, and testing reports are available on my GitHub repository for peer review.</p>
-        <button className="bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-sky-400 hover:text-white transition-all flex items-center gap-2 mx-auto">
-          <Github size={20} /> View on GitHub
-        </button>
       </div>
     </motion.div>
   );
@@ -389,7 +528,9 @@ export default function App() {
       <main>
         <AnimatePresence mode="wait">
           {activePage === 'about' && <AboutMe key="about" />}
+          {activePage === 'experience' && <Experience key="experience" />}
           {activePage === 'project' && <ProjectEntry key="project" />}
+          {activePage === 'other-projects' && <OtherProjects key="other-projects" />}
           {activePage === 'reflection' && <Reflection key="reflection" />}
         </AnimatePresence>
       </main>
