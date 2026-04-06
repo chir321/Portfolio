@@ -512,7 +512,7 @@ const ProjectEntry = () => {
             <div className="glass p-6 rounded-[3rem] border-gold-500/10 group">
               <div className="aspect-video bg-slate-900 rounded-[2rem] overflow-hidden relative">
                 <img 
-                  src="/mounting.jpeg" 
+                  src="moutning system.jpeg" 
                   alt="Ground Mount Iteration" 
                   className="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-105"
                   referrerPolicy="no-referrer"
@@ -554,7 +554,7 @@ const ProjectEntry = () => {
             <div className="glass p-6 rounded-[3rem] border-gold-500/10 group">
               <div className="aspect-video bg-slate-900 rounded-[2rem] overflow-hidden relative">
                 <img 
-                  src="/bom.jpeg" 
+                  src="bom.jpeg" 
                   alt="Electrical Architecture" 
                   className="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-105"
                   referrerPolicy="no-referrer"
