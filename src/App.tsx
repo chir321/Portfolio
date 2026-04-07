@@ -127,14 +127,10 @@ const AboutMe = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
         <div className="glass p-8 rounded-3xl space-y-4 border-t-2 border-t-gold-500/30">
           <h3 className="text-xl font-bold text-gold-400 flex items-center gap-2">
-            <User size={20} /> Professional Bio
+            <User size={20} /> Who am I?
           </h3>
           <p className="text-slate-300 leading-relaxed">
-            I am a driven Electrical Engineering student at the University of British Columbia. 
-            My academic journey is marked by a commitment to technical excellence and 
-            leadership, having served as an Electrical Engineering Representative for 
-            the UBC Engineering Society. I specialize in control systems, power electronics, 
-            and quantitative analysis.
+            I’m an Electrical Engineering student at the University of British Columbia (Class of 2026), with a focus on automation, control systems, and building practical, real-world solutions. My academic journey has been shaped by a strong interest in how systems work — not just technically, but in how they perform under real constraints like cost, efficiency, and scalability.
           </p>
         </div>
         <div className="glass p-8 rounded-3xl space-y-4 border-t-2 border-t-gold-500/30">
@@ -142,13 +138,10 @@ const AboutMe = () => {
             <Zap size={20} /> My Aspirations
           </h3>
           <p className="text-slate-300 leading-relaxed">
-            My career aspirations lie at the intersection of engineering and finance. 
-            I aim to apply structured engineering methodologies to strategic financial decisions, 
-            leveraging my experience in commodity trading and technical analysis to solve 
-            complex global challenges in energy and infrastructure. I am passionate about 
-            using my financial acumen to ensure that engineering projects are not just 
-            technically sound, but also commercially feasible and sustainable, bringing 
-            innovative ideas to life through rigorous business modeling and technical excellence.
+            Alongside my engineering coursework, I’ve developed experience in trading, market research, and financial analysis. This background has influenced how I approach engineering problems—I don’t just focus on whether something works, but whether it makes sense to build, how it scales, and how it performs in real-world conditions. 
+          </p>
+          <p className="text-slate-300 leading-relaxed">
+            I’m interested in building systems that are both technically strong and practically viable, where engineering decisions are directly tied to real outcomes like performance, efficiency, and cost. Long-term, I want to contribute to and build systems that operate effectively at scale, combining technical execution with strategic thinking.
           </p>
         </div>
       </div>
@@ -472,10 +465,7 @@ const ProjectEntry = () => {
             <Code size={24} /> My Role
           </h3>
           <p className="text-slate-300 leading-relaxed">
-            As the <strong>Lead Electrical Architect</strong>, I specialized in the 
-            DC-coupled storage architecture and battery management. I conducted 
-            the thermal stability analysis, component lifecycle verification, and 
-            managed the complex Bill of Materials (BOM) to ensure project viability.
+            As an <strong>Electrical Engineer</strong> on the team, I was responsible for the guts of the system—designing the DC-coupled storage and making sure the battery management was rock solid. I spent a lot of time on thermal analysis and picking the right parts to make sure this thing actually lasts in the Cuban heat.
           </p>
         </div>
       </div>
@@ -489,8 +479,8 @@ const ProjectEntry = () => {
           <div className="absolute top-0 right-0 w-64 h-64 bg-gold-500/5 blur-[80px] -z-10" />
           <div className="space-y-6 text-slate-300 leading-relaxed">
             <p>
-              The story of this project began with a fundamental question: How can engineering serve those whom the global grid has left behind? 
-              Our journey to rural Cienfuegos, Cuba, was not just about technical data, but about understanding the human cost of energy poverty. 
+              Our journey began when we were assigned to work with <strong>OneSharedFuture</strong>, a non-profit dedicated to supporting resource-constrained areas. The story of this project started with a fundamental question: How can engineering serve those whom the global grid has left behind? 
+              Our focus was on the <strong>Cuban community</strong> in rural Cienfuegos, where we looked beyond technical data to understand the human cost of energy poverty. 
               Initial site visits and extensive surveys revealed a stark reality—daily outages lasting between <strong>18 to 24 hours</strong> were the norm, 
               not the exception. We met families whose lives were dictated by the sun, unable to store medicine or study after dark.
             </p>
@@ -517,8 +507,8 @@ const ProjectEntry = () => {
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {[
-            { step: "01", title: "Site Analysis", desc: "Evaluating solar irradiance data and structural integrity of rural Cuban dwellings." },
-            { step: "02", title: "Simulation", desc: "Modeling transient responses and load profiles using MATLAB and Simulink." },
+            { step: "01", title: "Site Analysis", desc: "Evaluating solar irradiance data and structural integrity of the Cuban community's dwellings." },
+            { step: "02", title: "Simulation & Design", desc: "Modeling transient responses in MATLAB/Simulink and verifying structural integrity in SolidWorks." },
             { step: "03", title: "Prototyping", desc: "Assembling a 1:10 scale model with Arduino-based sensors for real-time data logging." },
             { step: "04", title: "Validation", desc: "Stress-testing the electrical architecture against simulated grid failures and surges." }
           ].map((item, i) => (
@@ -697,7 +687,7 @@ const ProjectEntry = () => {
             <div className="p-6 bg-gold-500/5 rounded-2xl border border-gold-500/10">
               <p className="text-xs text-gold-500 font-bold uppercase tracking-widest mb-2">Key Outcome</p>
               <p className="text-sm text-slate-300">
-                Projected to reduce household energy costs by 85% while increasing essential load uptime from 15% to 99.9%.
+                Delivering complete off-grid autonomy, increasing essential load uptime from 15% to 99.9% for families facing near-constant blackouts.
               </p>
             </div>
           </div>
@@ -776,7 +766,7 @@ const Reflection = () => {
 
         <div className="pt-8 border-t border-white/10 flex items-center gap-4 text-slate-500 italic">
           <MessageSquare size={20} className="text-gold-500" />
-          <span>a project can only be two of the following three, cheap, good, fast.</span>
+          <span>A project can only be two of the following three: cheap, good, or fast.</span>
         </div>
       </div>
     </motion.div>
