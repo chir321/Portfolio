@@ -130,7 +130,7 @@ const AboutMe = () => {
             <User size={20} /> Who am I?
           </h3>
           <p className="text-slate-300 leading-relaxed">
-            I’m an Electrical Engineering student at the University of British Columbia (Class of 2026), with a focus on automation, control systems, and building practical, real-world solutions. My academic journey has been shaped by a strong interest in how systems work — not just technically, but in how they perform under real constraints like cost, efficiency, and scalability.
+            I’m an Electrical Engineering student at the University of British Columbia (Class of 2026), with a focus on automation, control systems, and building practical, real-world solutions. My academic journey has been shaped by a strong interest in how systems work—from power systems and microelectronics to CAD and MEMS devices—and how they perform under real constraints like cost, efficiency, and scalability.
           </p>
         </div>
         <div className="glass p-8 rounded-3xl space-y-4 border-t-2 border-t-gold-500/30">
@@ -158,7 +158,7 @@ const AboutMe = () => {
               <p className="text-gold-400">Electrical Engineering</p>
               <p className="text-sm text-slate-400 mt-2">University of British Columbia | Class of 2026</p>
               <p className="text-xs text-slate-500 mt-4 leading-relaxed">
-                Focusing on power systems, renewable energy integration, and control theory. 
+                Specializing in power systems, coding, microelectronics, CAD, and MEMS devices. 
                 Active member of the engineering community and student leadership.
               </p>
             </div>
@@ -213,23 +213,6 @@ const AboutMe = () => {
               {skill}
             </span>
           ))}
-        </div>
-      </div>
-
-      {/* Footer Contact */}
-      <div className="text-center space-y-6 pt-12 border-t border-white/5">
-        <h3 className="text-xl font-medium text-gold-400">Let's connect</h3>
-        <div className="flex justify-center gap-6">
-          <a 
-            href="https://www.linkedin.com/in/chirag-das-541a2117b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B1dPhOKGNRsuv9%2BLO%2BImF0w%3D%3D" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-400 hover:text-gold-500 transition-colors"
-          >
-            <Linkedin size={28} />
-          </a>
-          <a href="https://www.youtube.com/@chiragdas9289" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-gold-500 transition-colors"><Youtube size={28} /></a>
-          <a href="mailto:chiragdasuni2021@gmail.com" className="text-slate-400 hover:text-gold-500 transition-colors"><Mail size={28} /></a>
         </div>
       </div>
     </motion.div>
@@ -378,7 +361,7 @@ const OtherProjects = () => {
       exit={{ opacity: 0, y: -20 }}
       className="max-w-6xl mx-auto pt-32 pb-20 px-6"
     >
-      <h1 className="text-5xl font-bold mb-12">Engineering <span className="gold-gradient">Portfolio</span></h1>
+      <h1 className="text-5xl font-bold mb-12">Project <span className="gold-gradient">Portfolio</span></h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {projects.map((project, i) => (
           <div key={i} className="glass p-8 rounded-3xl hover:bg-white/10 transition-all group border-gold-500/10">
